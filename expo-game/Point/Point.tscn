@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3aaymbq0heaw"]
+
+[ext_resource type="Script" uid="uid://btiqql3t8c47u" path="res://Point/Point.gd" id="1_rpmnj"]
+[ext_resource type="Texture2D" uid="uid://bvh74s3txrfmh" path="res://Assets/starbaby.png" id="2_jg7vs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vyc4"]
+radius = 17.029387
+
+[node name="Point" type="Area2D" unique_id=2129627461]
+script = ExtResource("1_rpmnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529652379]
+shape = SubResource("CircleShape2D_7vyc4")
+
+[node name="Starbaby" type="Sprite2D" parent="." unique_id=569549738]
+position = Vector2(-1, -2)
+texture = ExtResource("2_jg7vs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

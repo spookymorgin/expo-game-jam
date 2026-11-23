@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c254rm8jnupa6"]
+
+[ext_resource type="PackedScene" uid="uid://srupitlk608p" path="res://Player/Player.tscn" id="1_lxy7q"]
+[ext_resource type="PackedScene" uid="uid://d3aaymbq0heaw" path="res://Point/Point.tscn" id="3_amygn"]
+[ext_resource type="PackedScene" uid="uid://by5lkfubd5ym5" path="res://Wall2/Wall2.tscn" id="3_ps1la"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7vyc4"]
+distance = -33.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ryu38"]
+distance = 1.7484535e-07
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b2ork"]
+
+[node name="Main" type="Node2D" unique_id=1882201732]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1678773305]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1129163812]
+position = Vector2(514, 615)
+shape = SubResource("WorldBoundaryShape2D_7vyc4")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=551940724]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=415046382]
+position = Vector2(0, 387)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_ryu38")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2042136740]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1249323986]
+position = Vector2(1153, 368)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_b2ork")
+
+[node name="Point" parent="." unique_id=2129627461 instance=ExtResource("3_amygn")]
+position = Vector2(655, 453)
+
+[node name="Wall2" parent="." unique_id=1492522440 instance=ExtResource("3_ps1la")]
+position = Vector2(429, 525)
+
+[node name="Wall3" parent="." unique_id=1528069677 instance=ExtResource("3_ps1la")]
+position = Vector2(170, 376)
+
+[node name="Player" parent="." unique_id=77018975 instance=ExtResource("1_lxy7q")]
+position = Vector2(897, 452)
